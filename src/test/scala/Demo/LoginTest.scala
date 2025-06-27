@@ -12,8 +12,8 @@ class LoginTest extends Simulation{
     //Verificar de forma general para todas las solicitudes
 
   // 2 Scenario Definition
-  val scn = scenario("Login").
-    exec(http("login")
+  val scn = scenario("Login")
+    .exec(http("login")
       .post(s"users/login")
       .body(StringBody(s"""{"email": "$email", "password": "$password"}""")).asJson
          //Validar status 200 del servicio
